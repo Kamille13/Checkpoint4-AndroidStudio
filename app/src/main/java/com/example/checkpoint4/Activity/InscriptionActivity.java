@@ -1,4 +1,4 @@
-package com.example.checkpoint4;
+package com.example.checkpoint4.Activity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.checkpoint4.R;
+import com.example.checkpoint4.UserSingleton;
+import com.example.checkpoint4.VolleySingleton;
 import com.example.checkpoint4.model.User;
 
 

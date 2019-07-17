@@ -1,4 +1,4 @@
-package com.example.checkpoint4;
+package com.example.checkpoint4.Adapter;
 
 import android.content.Context;
 import android.support.v4.util.Consumer;
@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.checkpoint4.R;
+import com.example.checkpoint4.UserSingleton;
+import com.example.checkpoint4.VolleySingleton;
 import com.example.checkpoint4.model.FreakShow;
 import com.example.checkpoint4.model.User;
 

@@ -1,12 +1,13 @@
-package com.example.checkpoint4;
+package com.example.checkpoint4.Activity;
 
 import android.support.v4.util.Consumer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.checkpoint4.R;
+import com.example.checkpoint4.VolleySingleton;
 import com.example.checkpoint4.model.FreakShow;
-import com.example.checkpoint4.model.User;
 
 import java.util.List;
 

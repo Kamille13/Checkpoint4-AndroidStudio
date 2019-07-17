@@ -13,11 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UserOnFreakActivity">
+        <activity android:name=".Activity.UserOnFreakActivity">
         </activity>
-        <activity android:name=".FreakShowActivity"></activity>
-        <activity android:name=".InscriptionActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.FreakShowActivity"></activity>
+        <activity android:name=".Activity.InscriptionActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

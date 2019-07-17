@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FreakShowActivity"
+    tools:context=".Activity.FreakShowActivity"
     android:background="#9FC2CC">
 
     <ListView
