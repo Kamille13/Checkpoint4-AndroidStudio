@@ -19,8 +19,8 @@ import java.util.List;
 
 public class FreakShowAdapter extends ArrayAdapter<FreakShow> {
 
-    public FreakShowAdapter(Context context, List<FreakShow> movies) {
-        super(context, 0, movies);
+    public FreakShowAdapter(Context context, List<FreakShow> freakShows) {
+        super(context, 0, freakShows);
     }
 
     @Override

@@ -16,6 +16,11 @@ public class FreakShow {
     public FreakShow() {
     }
 
+    public FreakShow(String name, Set<User> users) {
+        this.name = name;
+        this.users = users;
+    }
+
     public FreakShow(String name, String description) {
         this.name = name;
         this.description = description;
