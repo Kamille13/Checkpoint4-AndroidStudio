@@ -51,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void accept(User user) {
                                 UserSingleton.getInstance().setUser(user);
-                                Intent intent = new Intent(MainActivity.this,
-                                        FreakShow.class);
-                                startActivity(intent);
+                                if(user != null) {
+                                    Intent intent = new Intent(MainActivity.this,
+                                            FreakShowActivity.class);
+                                    startActivity(intent);
+                                }
                             }
 
                         });
