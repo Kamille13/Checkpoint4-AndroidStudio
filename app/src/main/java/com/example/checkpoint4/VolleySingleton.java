@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class VolleySingleton {
 
-    private static final String URL = "http://localhost:8080/";
+    private static final String URL = "http://10.0.2.2:8080/";
 
     private static VolleySingleton instance;
     private static Context context;

@@ -23,5 +23,8 @@ public class FreakShowActivity extends AppCompatActivity {
         freakShows.add(new FreakShow("Wild Freak Show Paris","Les wilders les plus petits du monde !"));
         freakShows.add(new FreakShow("Wild Freak Show Marseille","Les wilders les plus fou du sud !"));
         freakShows.add(new FreakShow("Wild Freak Show LaLoupe","Les wilders les plus bizarres du monde !"));
+
+        FreakShowAdapter adapter = new FreakShowAdapter(FreakShowActivity.this, freakShows);
+        lvFreakShow.setAdapter(adapter);
     }
 }
