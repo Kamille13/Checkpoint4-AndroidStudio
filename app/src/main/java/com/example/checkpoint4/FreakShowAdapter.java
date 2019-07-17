@@ -41,12 +41,10 @@ public class FreakShowAdapter extends ArrayAdapter<FreakShow> {
                 VolleySingleton.getInstance(parent.getContext()).postFreakShowUser(userSingleton.getUser(),freakShow, new Consumer<User>() {
                     @Override
                     public void accept(User user) {
-
                     }
                 });
             }
         });
-
         return convertView;
     }
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#9FC2CC">
 
     <EditText
         android:id="@+id/etEmail"
@@ -41,6 +42,8 @@
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <Button
+        android:background="#0075F2"
+        android:alpha="0.7"
         android:id="@+id/btInscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,6 +58,8 @@
         app:layout_constraintTop_toBottomOf="@+id/btConnexion" />
 
     <Button
+        android:background="#0075F2"
+        android:alpha="0.7"
         android:id="@+id/btConnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,4 +72,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassWord" />
+
+    <ImageView
+        android:id="@+id/ivMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btInscription"
+        android:background="@drawable/freak2" />
 </android.support.constraint.ConstraintLayout>
