@@ -23,10 +23,19 @@ public class FreakShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_freak_show);
         Button btBack = findViewById(R.id.btBack);
+        Button btArtist = findViewById(R.id.btArtists);
+
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FreakShowActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btArtist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FreakShowActivity.this, UserOnFreakActivity.class);
                 startActivity(intent);
             }
         });

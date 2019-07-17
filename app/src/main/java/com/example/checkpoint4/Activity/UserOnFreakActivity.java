@@ -29,7 +29,7 @@ public class UserOnFreakActivity extends AppCompatActivity {
             public void accept(List<FreakShow> freakShows) {
                 for (FreakShow freakShow : freakShows){
                     userFreaks.add(new FreakShow(freakShow.getName(),freakShow.getUsers()));
-                    Toast.makeText(UserOnFreakActivity.this,freakShow.getName() + freakShow.getUsers().toString() , Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserOnFreakActivity.this,freakShow.getName() + freakShow.getUsers() , Toast.LENGTH_LONG).show();
                 }
                 UserFreakAdapter adapter = new UserFreakAdapter(UserOnFreakActivity.this, freakShows);
                 lvUserOnFreak.setAdapter(adapter);

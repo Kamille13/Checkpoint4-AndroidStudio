@@ -30,7 +30,7 @@ public class UserFreakAdapter extends ArrayAdapter {
         TextView tvFreakShowName = convertView.findViewById(R.id.tvFreakName);
         tvFreakShowName.setText(freakShow.getName());
         TextView tvUserFreak = convertView.findViewById(R.id.tvUserOnFreak);
-        tvUserFreak.setText(freakShow.getUsers().toString());
+        tvUserFreak.setText(freakShow.getUsers().hashCode());
 
         return convertView;
     }
