@@ -1,5 +1,8 @@
 package com.example.checkpoint4.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class FreakShow {
 
     private Long id;
@@ -7,6 +10,8 @@ public class FreakShow {
     private String name;
 
     private String description;
+
+    private Set<User> users = new HashSet<>();
 
     public FreakShow() {
     }
@@ -38,5 +43,13 @@ public class FreakShow {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
