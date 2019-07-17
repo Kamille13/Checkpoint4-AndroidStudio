@@ -11,8 +11,7 @@ public class FreakShow {
     public FreakShow() {
     }
 
-    public FreakShow(Long id, String name, String description) {
-        this.id = id;
+    public FreakShow(String name, String description) {
         this.name = name;
         this.description = description;
     }

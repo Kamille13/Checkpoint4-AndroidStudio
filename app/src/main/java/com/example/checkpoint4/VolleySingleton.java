@@ -3,7 +3,7 @@ package com.example.checkpoint4;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.support.v4.util.Consumer;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,11 +22,10 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 
 public class VolleySingleton {
 
-    private static final String URL = "http://10.0.2.2:8080/";
+    private static final String URL = "http://localhost:8080/";
 
     private static VolleySingleton instance;
     private static Context context;
@@ -62,9 +61,8 @@ public class VolleySingleton {
         final String requestBody = gson.toJson(user);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                URL+"/users", null, new Response.Listener<JSONObject>() {
+                URL+"users", null, new Response.Listener<JSONObject>() {
 
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(JSONObject response) {
                 User user = gson.fromJson(response.toString(), User.class);
@@ -76,8 +74,9 @@ public class VolleySingleton {
             public void onErrorResponse(VolleyError error) {
                 new AlertDialog.Builder(context)
                         .setTitle("Erreur")
-                        .setMessage("Something went wrong !")
+                        .setMessage("L'enregistrement a échoué !")
                         .show();
+                return;
             }
         }) {
             @Override
@@ -107,9 +106,8 @@ public class VolleySingleton {
         final String requestBody = gson.toJson(user);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                URL+"/users/signIn", null, new Response.Listener<JSONObject>() {
+                URL+"users/signIn", null, new Response.Listener<JSONObject>() {
 
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(JSONObject response) {
                 User user = gson.fromJson(response.toString(), User.class);
@@ -123,6 +121,7 @@ public class VolleySingleton {
                         .setTitle("Erreur")
                         .setMessage("Votre e-mail ou votre mot de passe n'est pas valide !")
                         .show();
+                return;
             }
         }) {
             @Override
@@ -146,4 +145,5 @@ public class VolleySingleton {
 
         addToRequestQueue(jsonObjectRequest);
     }
+
 }
