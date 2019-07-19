@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.checkpoint4.R;
@@ -33,6 +34,13 @@ public class UserFreakAdapter extends ArrayAdapter {
         for (User users : freakShow.getUsers()) {
             tvUserFreak.append(users.getEmail() + "\n");
         }
+        Button btDelete = convertView.findViewById(R.id.btDelete);
+        btDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         return convertView;
     }
 }
