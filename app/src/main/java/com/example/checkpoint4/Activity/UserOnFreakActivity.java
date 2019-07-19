@@ -1,9 +1,13 @@
 package com.example.checkpoint4.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.util.Consumer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.checkpoint4.Adapter.UserFreakAdapter;
 import com.example.checkpoint4.R;
@@ -35,5 +39,6 @@ public class UserOnFreakActivity extends AppCompatActivity {
                 lvUserOnFreak.setAdapter(adapter);
             }
         });
+
     }
 }

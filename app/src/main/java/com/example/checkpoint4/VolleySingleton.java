@@ -3,6 +3,7 @@ package com.example.checkpoint4;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.support.v4.util.Consumer;
+import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -224,6 +225,29 @@ public class VolleySingleton {
         };
 
         addToRequestQueue(jsonObjectRequest);
+    }
+    public void deleteOneCollectPoint(Long freakShowId, final Consumer<FreakShow> freakShowConsumer) {
+        String url = URL + "freakshows/" + freakShowId;
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        final Gson gson = gsonBuilder.create();
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.DELETE,
+                url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.i("Response", String.valueOf(response));
+                FreakShow freakShow = gson.fromJson(response.toString(), FreakShow.class);
+                freakShowConsumer.accept(freakShow);
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.e("Error: ", error.getMessage());
+            }
+        });
+        requestQueue.add(jsonObjectRequest);
     }
 
 }

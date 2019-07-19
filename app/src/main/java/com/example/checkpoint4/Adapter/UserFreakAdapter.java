@@ -1,14 +1,19 @@
 package com.example.checkpoint4.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.util.Consumer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.checkpoint4.Activity.UserOnFreakActivity;
 import com.example.checkpoint4.R;
+import com.example.checkpoint4.VolleySingleton;
 import com.example.checkpoint4.model.FreakShow;
 import com.example.checkpoint4.model.User;
 
@@ -34,13 +39,18 @@ public class UserFreakAdapter extends ArrayAdapter {
         for (User users : freakShow.getUsers()) {
             tvUserFreak.append(users.getEmail() + "\n");
         }
-        Button btDelete = convertView.findViewById(R.id.btDelete);
+        final Button btDelete = convertView.findViewById(R.id.btDelete);
         btDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                VolleySingleton.getInstance(parent.getContext()).deleteOneCollectPoint(freakShow.getId(), new Consumer<FreakShow>() {
+                    @Override
+                    public void accept(FreakShow freakShow) {
+                    }
+                });
             }
         });
+
         return convertView;
     }
 }
