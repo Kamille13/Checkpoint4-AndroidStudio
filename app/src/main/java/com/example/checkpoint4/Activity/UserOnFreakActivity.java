@@ -1,5 +1,6 @@
 package com.example.checkpoint4.Activity;
 
+import android.support.v4.util.ArraySet;
 import android.support.v4.util.Consumer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,9 +12,12 @@ import com.example.checkpoint4.Adapter.UserFreakAdapter;
 import com.example.checkpoint4.R;
 import com.example.checkpoint4.VolleySingleton;
 import com.example.checkpoint4.model.FreakShow;
+import com.example.checkpoint4.model.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class UserOnFreakActivity extends AppCompatActivity {
 
@@ -28,8 +32,9 @@ public class UserOnFreakActivity extends AppCompatActivity {
             @Override
             public void accept(List<FreakShow> freakShows) {
                 for (FreakShow freakShow : freakShows){
-                    userFreaks.add(new FreakShow(freakShow.getName(),freakShow.getUsers()));
-                    Toast.makeText(UserOnFreakActivity.this,freakShow.getName() + freakShow.getUsers() , Toast.LENGTH_LONG).show();
+                    for(User users : freakShow.getUsers()){
+                        userFreaks.add(new FreakShow(freakShow.getName(),users.getEmail()));
+                    }
                 }
                 UserFreakAdapter adapter = new UserFreakAdapter(UserOnFreakActivity.this, freakShows);
                 lvUserOnFreak.setAdapter(adapter);

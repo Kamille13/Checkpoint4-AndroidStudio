@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.checkpoint4.R;
 import com.example.checkpoint4.model.FreakShow;
+import com.example.checkpoint4.model.User;
+
 import java.util.List;
 
 public class UserFreakAdapter extends ArrayAdapter {
@@ -30,7 +32,11 @@ public class UserFreakAdapter extends ArrayAdapter {
         TextView tvFreakShowName = convertView.findViewById(R.id.tvFreakName);
         tvFreakShowName.setText(freakShow.getName());
         TextView tvUserFreak = convertView.findViewById(R.id.tvUserOnFreak);
-        tvUserFreak.setText(freakShow.getUsers().toString());
+        for(User users : freakShow.getUsers()){
+            tvUserFreak.append(users.getEmail()+"\n");
+        }
+
+
 
         return convertView;
     }
