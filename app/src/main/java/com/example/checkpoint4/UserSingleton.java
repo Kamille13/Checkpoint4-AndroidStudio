@@ -7,7 +7,8 @@ public class UserSingleton {
     private static UserSingleton instance;
     private User user;
 
-    private UserSingleton() {}
+    private UserSingleton() {
+    }
 
     public static UserSingleton getInstance() {
         if (instance == null) {
@@ -16,11 +17,11 @@ public class UserSingleton {
         return instance;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public User getUser() {
         return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

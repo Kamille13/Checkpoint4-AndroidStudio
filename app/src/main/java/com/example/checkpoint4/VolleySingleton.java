@@ -66,7 +66,7 @@ public class VolleySingleton {
         final String requestBody = gson.toJson(user);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                URL+"users", null, new Response.Listener<JSONObject>() {
+                URL + "users", null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -105,13 +105,14 @@ public class VolleySingleton {
 
         addToRequestQueue(jsonObjectRequest);
     }
+
     public void signIn(User user, final Consumer<User> listener) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
         final String requestBody = gson.toJson(user);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                URL+"users/signIn", null, new Response.Listener<JSONObject>() {
+                URL + "users/signIn", null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -185,7 +186,7 @@ public class VolleySingleton {
         final String requestBody = gson.toJson(user);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                URL+"users/"+user.getId()+"/freakshows/"+freakShow.getId() , null, new Response.Listener<JSONObject>() {
+                URL + "users/" + user.getId() + "/freakshows/" + freakShow.getId(), null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {

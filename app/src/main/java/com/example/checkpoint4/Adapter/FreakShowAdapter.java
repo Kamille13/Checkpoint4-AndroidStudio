@@ -41,7 +41,7 @@ public class FreakShowAdapter extends ArrayAdapter<FreakShow> {
             @Override
             public void onClick(View v) {
                 UserSingleton userSingleton = UserSingleton.getInstance();
-                VolleySingleton.getInstance(parent.getContext()).postFreakShowUser(userSingleton.getUser(),freakShow, new Consumer<User>() {
+                VolleySingleton.getInstance(parent.getContext()).postFreakShowUser(userSingleton.getUser(), freakShow, new Consumer<User>() {
                     @Override
                     public void accept(User user) {
                     }
