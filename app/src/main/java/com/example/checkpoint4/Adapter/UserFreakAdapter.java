@@ -43,7 +43,7 @@ public class UserFreakAdapter extends ArrayAdapter {
         btDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                VolleySingleton.getInstance(parent.getContext()).deleteOneCollectPoint(freakShow.getId(), new Consumer<FreakShow>() {
+                VolleySingleton.getInstance(parent.getContext()).deleteOneFreakShow(freakShow.getId(), new Consumer<FreakShow>() {
                     @Override
                     public void accept(FreakShow freakShow) {
                     }

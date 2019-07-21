@@ -39,6 +39,21 @@ public class UserOnFreakActivity extends AppCompatActivity {
                 lvUserOnFreak.setAdapter(adapter);
             }
         });
-
+        Button btBack = findViewById(R.id.btRetour);
+        btBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserOnFreakActivity.this, FreakShowActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btRefrech = findViewById(R.id.btRefresh);
+        btRefrech.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserOnFreakActivity.this, UserOnFreakActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
