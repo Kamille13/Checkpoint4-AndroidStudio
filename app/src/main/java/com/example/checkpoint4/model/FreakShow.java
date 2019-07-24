@@ -26,6 +26,13 @@ public class FreakShow {
         this.description = description;
     }
 
+    public FreakShow(Long id, String name, String description, Set<User> users) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.users = users;
+    }
+
     public Long getId() {
         return id;
     }

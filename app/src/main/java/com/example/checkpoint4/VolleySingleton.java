@@ -226,8 +226,8 @@ public class VolleySingleton {
 
         addToRequestQueue(jsonObjectRequest);
     }
-    public void deleteOneFreakShow(Long freakShowId, final Consumer<FreakShow> freakShowConsumer) {
-        String url = URL + "freakshows/" + freakShowId;
+    public void deleteOneFreakShow(Long freakshowId, final Consumer<FreakShow> freakShowConsumer) {
+        String url = URL + "freakshows/" + freakshowId;
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
 
@@ -249,5 +249,4 @@ public class VolleySingleton {
         });
         requestQueue.add(jsonObjectRequest);
     }
-
 }
